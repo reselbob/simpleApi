@@ -60,7 +60,7 @@
             <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
           </JSONPostProcessor>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Good Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="-1884357708">stooges</stringProp>
             </collectionProp>
@@ -69,6 +69,17 @@
             <intProp name="Assertion.test_type">2</intProp>
             <stringProp name="Assertion.scope">variable</stringProp>
             <stringProp name="Scope.variable">ListName</stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Bad Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1706648774">jetsons</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.scope">variable</stringProp>
+            <stringProp name="Scope.variable">MyListName</stringProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
