@@ -1,5 +1,5 @@
 {
-  "name": "simpleapi",
+  "name": "simpleApiApp",
   "version": "1.0.0",
   "description": "A simple REST API that can be used for a variety of demonstration purposes",
   "main": "app.js",
