@@ -1,5 +1,7 @@
 'use strict';
-
+/*
+Method for delivering data to the API
+ */
 module.exports.getList = function getList(name) {
     let obj;
     const nm = name !=null ? name.toLowerCase() : null;
