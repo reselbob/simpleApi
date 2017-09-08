@@ -4,7 +4,8 @@
   "description": "A simple REST API that can be used for a variety of demonstration purposes",
   "main": "app.js",
   "scripts": {
-    "test": "mocha test/basic-tests.js"
+    "test": "mocha test/basic-tests.js",
+    "http-test": "mocha test/http-tests.js"
   },
   "repository": {
     "type": "git",
@@ -22,9 +23,15 @@
   },
   "homepage": "https://github.com/reselbob/simpleApi#readme",
   "dependencies": {
+    "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "chai": "^3.5.0",
+    "cors": "^2.8.4",
     "express": "^4.15.4",
-    "mocha": "^3.5.0"
+    "lodash": "^4.17.4",
+    "mocha": "^3.5.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "supertest": "^3.0.0"
   }
 }

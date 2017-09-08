@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 const chai = require('chai');
 chai.should();
 const assert = require('chai').assert;
@@ -8,14 +8,15 @@ const it = require('mocha').it;
 
 const dataFactory = require('../data/dataFactory');
 
-describe('Basic Tests: ', function () {
-    it('Can get list from factory', function (done) {
-        const factory = dataFactory.getList();
-        expect(factory).to.be.an('object');
+describe('Basic Tests: ', () => {
+    it('Can get list from factory', done => {
+        const list = dataFactory.getList();
+        expect(list).to.be.an('object');
+        console.log(JSON.stringify(list));
         done();
     });
 
-    it('Can get items by list name', function (done) {
+    it('Can get items by list name', done => {
         const list = require('../data/listData');
         for (const prop in list) {
             const obj = dataFactory.getList(prop);
