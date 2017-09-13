@@ -3,10 +3,10 @@ const promise = require('bluebird');
 const _ = require('lodash');
 const supertest = require('supertest');
 const chai = require('chai');
-chai.should();
 const expect = require('chai').expect;
 const describe = require('mocha').describe;
 const it = require('mocha').it;
+
 const app = require('../app');
 
 describe('HTTP Tests: ', () => {
@@ -16,7 +16,8 @@ describe('HTTP Tests: ', () => {
             .get('/lists')
             .set('Accept', 'application/json')
             .then((res) => {
-                if(res.statusCode !== 200) throw new Error(res.text);
+                //inspect the response (res)
+                if (res.statusCode !== 200) throw new Error(res.text);
                 const listNames = [];
                 const obj = JSON.parse(res.text);
                 expect(obj).to.be.an('object');
@@ -26,17 +27,23 @@ describe('HTTP Tests: ', () => {
                 }
                 //return listNames;
                 const listCalls = _.map(listNames, name => {
-                    supertest(app)
-                        .get(`/lists/${name}`)
-                        .set('Accept', 'application/json')
-                        .end((err, res) => {
-                            const obj = JSON.parse(res.text);
-                            expect(obj).to.be.an('object');
-                            expect(obj.name).to.equal(name);
-                            expect(obj[name].list).to.be.an('array');
-                        })
+                //Make GET for each list name
+                supertest(app)
+                    .get(`/lists/${name}`)
+                    .set('Accept', 'application/json')
+                    .end((err, res) => {
+                        //Make the expectations
+                        const obj = JSON.parse(res.text);
+                        expect(obj).to.be.an('object');
+                        expect(obj.name).to.equal(name);
+                        expect(obj[name].list).to.be.an('array');
+                        expect(obj[name].list.length).to.be.gt(0);
+                    })
                 });
-                return promise.all(listCalls).then(() => {done()});
+                //go up against all the endpoints
+                return promise.all(listCalls).then(() => {
+                    done()
+                });
             })
             .catch(done);
     });
