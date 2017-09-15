@@ -4,7 +4,7 @@ module.exports = (function () {
         stooges:['moe', 'larry', 'curly'],
         jetsons:['george', 'jane', 'judy', 'elroy'],
         flintstones:['fred', 'wilma', 'pebbles'],
-        rubble:['barney', 'betty', 'bambam'],
+        rubbles:['barney', 'betty', 'bambam'],
         beatles: ['john', 'paul', 'george', 'ringo'],
     };
 
