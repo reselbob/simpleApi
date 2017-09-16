@@ -5,7 +5,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+//This is the routing javascript file
 const routes = require('./routes/routes.js')(app);
 
 const server = app.listen(3000, function () {
